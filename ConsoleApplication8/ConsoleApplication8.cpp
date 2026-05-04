@@ -1,13 +1,15 @@
 ﻿#include <iostream>
 #include <cmath>
-
-int main() {
-    const double PI = 3.14159265358979323846;
-    double sum = 0.0;
-    for (int n = 1; n <= 23; ++n) {
-        double term = pow(2.0, -n) * cos(PI * n / 4.0);
-        sum += term;
+#include <iomanip>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "");
+    cout << fixed << setprecision(4);
+    double s = 0;
+    double pi = 3.14159265358979323846;
+    for (int n = 1; n < 24; n += 1) {
+        s += pow(2, -n) * cos((pi * n) / 4);
     }
-    std::cout << "a) Sum = " << sum << std::endl;
-    return 0;
+    cout << "Результат:" << s << endl;
 }
